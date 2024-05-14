@@ -14,7 +14,7 @@ public class BinarySearch {
             if (arr[left]<=arr[mid]){ // means left array is sorted
                 if (target<arr[left] || target>arr[mid]){ //  target is exists in right array
                     left=mid+1;
-                }else { // target is in lest array
+                }else { // target is in left array
                     right=mid-1;
                 }
             }else{  // means  right array is sorted
