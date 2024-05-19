@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TargetSum_optimized {
-    static Map<Integer,Integer> map=null;
+    static Map<Integer,Integer> map=null; // for putting number and its index in array
     private static int[] targetSum(int[]arr,int target){
         map=new HashMap<>();
         for (int i=0;i<arr.length;i++){
