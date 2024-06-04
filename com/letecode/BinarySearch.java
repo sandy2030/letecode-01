@@ -4,7 +4,6 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class BinarySearch {
-
     private static int binarySearch(int[]arr,int target){
         int left=0; int right= arr.length-1;
         while(left<=right){
@@ -17,7 +16,7 @@ public class BinarySearch {
                 }else { // target is in left array
                     right=mid-1;
                 }
-            }else{  // means  right array is sorted
+            }else{  // means  right array is sorted         7 0 1  2  4 5 6
                 if (target<arr[mid] || target>arr[right]){ // means target is in left array
                      right=mid-1;
                 }else { //   target is in right array
@@ -29,6 +28,7 @@ public class BinarySearch {
     }
     public static void main(String[] args) {
         int a[]={4,5,6,7,0,1,2};
+        int a1[]={55,}; // -1 0 14 26 55 223 227
 
         System.out.println(binarySearch(a,2));
     }

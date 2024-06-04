@@ -10,8 +10,9 @@ public class MinInRotatedSortedArray {
             return arr[0];
 
         while (left<=right){
-            if (arr[left]<arr[right])
-                ans=Math.min(ans,arr[left]);
+            if (arr[left]<arr[right]) {
+                ans = Math.min(ans, arr[left]);
+            }
             int mid=(left+right)/2;
             ans=Math.min(ans,arr[mid]);
             if (arr[left]<=arr[mid])
