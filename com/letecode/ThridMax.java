@@ -22,7 +22,7 @@ public class ThridMax {
 
     public static void main(String[] args) {
         // return 3rd max , if array lenght is less than 3 than return max
-        int [] arr={21,2}; // 2,5,6,21,78,87,312
+        int [] arr={2,5,6,21,78,87,312}; // 2,5,6,21,78,87,312
         System.out.println(thirdMax(arr));
     }
 }

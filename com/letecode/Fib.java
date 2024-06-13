@@ -7,8 +7,13 @@ public class Fib {
 
             return fib(N - 1) + fib(N - 2);
     }
-
+    public static long fibonacci(int n) {
+        if (n <=1) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
     public static void main(String[] args) {
-        System.out.println(fib(8));
+        System.out.println(fibonacci(4));
     }
 }
