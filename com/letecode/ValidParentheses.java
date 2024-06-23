@@ -7,6 +7,7 @@ import java.util.Stack;
 public class ValidParentheses {
 
     static boolean isValidParentheses(String s){
+        boolean flag=true;
         Map<Character,Character> map=new HashMap<>();
         // (){}[]
         //({ })
@@ -25,15 +26,15 @@ public class ValidParentheses {
                 char top=stack.pop(); // {
                 if(map.get(c)!=top)
                 {
-                    return false;
+                    flag=false;
                 }
             }
         }
-        return false;
+        return flag;
     }
 
     public static void main(String[] args) {
-        String  s="{()}";
+        String  s="{([)}";
 
         System.out.println(isValidParentheses(s));
     }
