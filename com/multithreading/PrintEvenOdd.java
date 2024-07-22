@@ -1,29 +1,47 @@
 package com.multithreading;
-
-import java.util.Objects;
-import java.util.Random;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-
-public class PrintEvenOdd implements  Runnable {
-static int cnt=1;
-
+public class PrintEvenOdd {
+    static int N=10;
+    int i=0;
     public static void main(String[] args) {
-        Object lock=new Object();
-        Runnable r1=printEvenOdd(lock);
+        PrintEvenOdd obj=new PrintEvenOdd();
+
+        Thread odd=new Thread(()->obj.printOdd());
+        odd.setName("odd");
+        Thread even=new Thread(() -> obj.printEven());
+        even.setName("even");
+        odd.start();
+        even.start();
     }
 
-    private static Runnable printEvenOdd(Object lock) {
-        return null;
-    }
-
-
-    @Override
-    public void run() {
-        while (cnt<=10){
-    if (cnt%2==0 &&     Thread.currentThread().getName().equals("even")){
-    }
+    synchronized void printOdd(){
+        while (i<N) {
+            if (i % 2 == 0){
+                try {
+                    wait(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            System.out.println("Thread name: " + Thread.currentThread().getName() + " " + i);
+            i++;
+            notify();
         }
     }
+
+    synchronized void  printEven(){
+        while (i<N){
+            if (i % 2 == 1){
+                try {
+                    wait(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            System.out.println("Thread name: " + Thread.currentThread().getName() + " " + i);
+            i++;
+            notify();
+        }
+    }
+
 }
 
