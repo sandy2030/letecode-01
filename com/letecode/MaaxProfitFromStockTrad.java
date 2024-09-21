@@ -44,18 +44,4 @@ for(int i=0;i<present.length;i++){
     }
         return val;
     }
-
-    private static int maximumProfitFromStockTrade(int[] present, int[] future, int budget) {
-        int sum=0;
-        int []dp=new int[budget];
-        int uBudget=budget;
-        for (int i=0;i<present.length;i++){
-            if (uBudget-present[i]>=0 && future[i]-present[i]>0){
-                dp[i]=future[i]-present[i];
-                uBudget=uBudget-present[i];
-                sum+=dp[i];
-            }
-        }
-        return sum;
-    }
 }
