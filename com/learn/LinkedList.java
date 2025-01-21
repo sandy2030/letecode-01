@@ -48,6 +48,19 @@ public class LinkedList {
      }
 head=previous;
  }
+
+ void reverse1(){
+        Node prev=null,next=null;
+        Node current=head;
+        // 1 2 3 4
+        while (current!=null){
+            next=current.next;
+            current.next=prev;
+            prev=current;
+            current=next;
+        }
+
+ }
     public static void main(String[] args) {
         LinkedList list=new LinkedList();
         list.add(1);

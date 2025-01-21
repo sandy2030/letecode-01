@@ -19,6 +19,6 @@ class PrimeNumber {
     // Driver Program
     public static void main(String args[])
     {
-        System.out.println(isPrime(23));
+        System.out.println(isPrime(39));
     }
 }

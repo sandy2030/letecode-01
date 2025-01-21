@@ -34,7 +34,6 @@ studentList.stream()
         .map(Student::getDept)
         .distinct()
         .forEach(s-> System.out.print(s+"  "));
-
         System.out.println("\n-------------------");
 
         studentList.stream().map(student -> student.getContacts()).forEach(s-> System.out.print(s+" "));
@@ -52,6 +51,9 @@ studentList.stream()
 
         Map<String, Double> collect1 = studentList.stream().collect(Collectors.groupingBy(Student::getGender, Collectors.averagingInt(Student::getAge)));
         System.out.println(collect1);
+
+
+
 
     }
 }

@@ -1,10 +1,8 @@
 package com.letecode;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class isAnagram {
@@ -24,15 +22,14 @@ public class isAnagram {
             else
                 map.put(t.charAt(i),-1);
         }
-        Iterator<Integer> iterator = map.values().iterator();
-        while (iterator.hasNext()){
-            Integer value=iterator.next();
-            if (value!=0) flag=false;
-        }
+        List<Character> collect = map.entrySet().stream().filter(e -> e.getValue() != 0)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+        if (collect.size()!=0) flag=false;
         return flag;
     }
 
     public static void main(String[] args) {
-        System.out.println(isAnagram("mary",""));
+        System.out.println(isAnagram("mary","ramy"));
     }
 }

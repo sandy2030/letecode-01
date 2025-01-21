@@ -4,7 +4,7 @@ public class BestTimeToSellAndBuy {
     private static int bestTimeToSellNBuy(int [] prices){
         int min=prices[0];
         int profit=0;
-        for (int i=0;i<prices.length;i++){
+        for (int i=1;i<prices.length;i++){
             if (prices[i]<min){
                 min=prices[i];
             }
@@ -14,7 +14,7 @@ public class BestTimeToSellAndBuy {
     }
 
     public static void main(String[] args) {
-        int arr[]={100,2,5};
+        int arr[]={10,2,5};
         System.out.println(bestTimeToSellNBuy(arr));
     }
 }

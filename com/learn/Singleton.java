@@ -10,7 +10,7 @@ public class Singleton {
     }
 
     // double check makes thread safe
-    private static Singleton getInstamce(){
+    public static Singleton getInstamce(){
         if (instance==null){
             synchronized (Singleton.class){
                 if (instance==null){
@@ -30,4 +30,5 @@ public class Singleton {
     protected Object clone() throws CloneNotSupportedException{
         throw new CloneNotSupportedException("Singleton can not be cloned");
     }
+
 }

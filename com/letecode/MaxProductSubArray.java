@@ -18,7 +18,7 @@ public class MaxProductSubArray {
         return result;
     }
     public static void main(String[] args) {
-        int arr[]={2,3,-2,4};
+        int arr[]={-2, 6, -3, -10, 0, 2};
         System.out.println(maxProductSybArray(arr));
     }
 }

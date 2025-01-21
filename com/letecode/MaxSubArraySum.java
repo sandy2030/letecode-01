@@ -14,7 +14,8 @@ public class MaxSubArraySum {
     }
 
     public static void main(String[] args) {
-        int arr[]={5,4,-1,7,8};
-        System.out.println(maxSubArray(arr));
+        int arr[]={5,4,-1,7,-8};
+        int a1[]={-2,3,0,1,-4,5};
+        System.out.println(maxSubArray(a1));
     }
 }
