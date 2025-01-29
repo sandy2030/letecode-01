@@ -31,7 +31,8 @@ public class Solution {
 
         // Count the frequency of each character using Collectors.groupingBy and Collectors.counting
         List<Character> nonRepetitiveChars = charList.stream()
-                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,
+                        Collectors.counting()))
                 .entrySet().stream()
                 .filter(e -> e.getValue() == 1)  // Filter out characters that appear more than once
                 .map(Map.Entry::getKey)  // Get the character
