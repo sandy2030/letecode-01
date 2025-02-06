@@ -1,19 +1,19 @@
 package com.parkinglot;
 
 class Vehicle {
-    protected String numberPlate;
-    protected VehicleType vehicleType;
+    private String licensePlate;
+    private VehicleType type;
 
-    public Vehicle(String numberPlate, VehicleType vehicleType) {
-        this.numberPlate=numberPlate;
-        this.vehicleType=vehicleType;
+    public Vehicle(String licensePlate, VehicleType type) {
+        this.licensePlate = licensePlate;
+        this.type = type;
     }
 
-    public String getNumberPlate() {
-        return numberPlate;
+    public VehicleType getType() {
+        return type;
     }
 
-    public VehicleType getVehicleType() {
-        return vehicleType;
+    public String getLicensePlate() {
+        return licensePlate;
     }
 }
