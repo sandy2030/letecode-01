@@ -3,22 +3,23 @@ package com.singleton;
 public class SingletonMultiThreaded implements Cloneable {
     private static volatile SingletonMultiThreaded instance;
 
-    private SingletonMultiThreaded() {
-        if (instance != null) {
-            throw new IllegalStateException("Instance already created");
+    private SingletonMultiThreaded(){
+        if (instance!=null){
+            throw new IllegalStateException("not allowed");
         }
     }
 
-    public static SingletonMultiThreaded getInstance(){
-        if (null==instance){
+    public SingletonMultiThreaded getInstance(){
+        if (instance==null){
             synchronized (SingletonMultiThreaded.class){
-                if (null==instance){
+                if (instance==null){
                     instance=new SingletonMultiThreaded();
                 }
             }
         }
         return instance;
     }
+
 
     protected Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException("Singleton instance cannot be cloned");

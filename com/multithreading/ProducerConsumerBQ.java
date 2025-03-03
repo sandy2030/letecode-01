@@ -41,7 +41,6 @@ public class ProducerConsumerBQ {
             Integer remove = queue.take();
             System.out.println("removed  "+remove);
             Thread.sleep(2000);
-
         }
     }
 

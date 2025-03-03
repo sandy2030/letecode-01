@@ -19,6 +19,7 @@ void printOdd(){
                 if (i % 2 == 0) {
                     try {
                         wait();
+                        System.out.println(Thread.currentThread().getName()+"   "+Thread.currentThread().getState());
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
@@ -36,6 +37,7 @@ void printEven(){
         while (i<N){
             if (i % 2 == 1) {
                 try {
+                    System.out.println(Thread.currentThread().getName()+"   "+Thread.currentThread().getState());
                     wait();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
