@@ -18,14 +18,15 @@ void printOdd(){
         while (i<N){
                 if (i % 2 == 0) {
                     try {
-                        wait();
-                        System.out.println(Thread.currentThread().getName()+"   "+Thread.currentThread().getState());
+                         wait();
+                        Thread.sleep(1000);
+                        //System.out.println(Thread.currentThread().getName()+"   "+Thread.currentThread().getState());
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
                 }
 
-                System.out.println("Thread name " + Thread.currentThread().getName() + "i= " + i);
+                System.out.println("Thread name " + Thread.currentThread().getName() + "      i= " + i);
                 i++;
                 notify();
             }
@@ -37,14 +38,15 @@ void printEven(){
         while (i<N){
             if (i % 2 == 1) {
                 try {
-                    System.out.println(Thread.currentThread().getName()+"   "+Thread.currentThread().getState());
+                    //System.out.println(Thread.currentThread().getName()+"   "+Thread.currentThread().getState());
                     wait();
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
             }
 
-            System.out.println("Thread name " + Thread.currentThread().getName() + "i= " + i);
+            System.out.println("Thread name " + Thread.currentThread().getName() + "    i= " + i);
             i++;
             notify();
         }
