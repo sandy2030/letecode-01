@@ -29,6 +29,15 @@ public class Solution {
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.toList());
 
+        Map<Character, Long> map = charList.stream()
+                .collect(Collectors.groupingBy(Function.identity(),
+                        Collectors.counting()));
+        System.out.println("map is   "+map); //  {a=5, e=1, g=4, i=2, J=1, l=1, m=3, n=2, o=1, p=1, r=2, s=1, u=1, v=1, y=1}
+
+        LinkedHashMap<Character, Long> collect = charList.stream()
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,
+                        Collectors.counting()));
+        System.out.println("collect is   "+collect);
         // Count the frequency of each character using Collectors.groupingBy and Collectors.counting
         List<Character> nonRepetitiveChars = charList.stream()
                 .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,
